@@ -1,0 +1,85 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-220,-224",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port pcie_refclk -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace port pcie_mgt -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD -left
+preplace port qsfp0_clk -pg 1 -lvl 7 -x 1920 -y 610 -defaultsOSRD -right
+preplace port qsfp0_gt -pg 1 -lvl 7 -x 1920 -y 590 -defaultsOSRD
+preplace port qsfp1_gt -pg 1 -lvl 7 -x 1920 -y 550 -defaultsOSRD
+preplace port qsfp1_clk -pg 1 -lvl 7 -x 1920 -y 570 -defaultsOSRD -right
+preplace port port-id_init_clk -pg 1 -lvl 7 -x 1920 -y 670 -defaultsOSRD -right
+preplace port port-id_qsfp0_up -pg 1 -lvl 7 -x 1920 -y 650 -defaultsOSRD
+preplace port port-id_qsfp1_up -pg 1 -lvl 7 -x 1920 -y 630 -defaultsOSRD
+preplace portBus qsfp_rst_l -pg 1 -lvl 7 -x 1920 -y 470 -defaultsOSRD
+preplace portBus qsfp_lp -pg 1 -lvl 7 -x 1920 -y 490 -defaultsOSRD
+preplace inst pcie -pg 1 -lvl 2 -x 420 -y 450 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 64 57 58 59 60 61 62 63 56 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 93 92 91} -defaultsOSRD -pinDir M_AXI_B right -pinY M_AXI_B 0R -pinDir S_AXI_LITE right -pinY S_AXI_LITE 20R -pinDir pcie_mgt left -pinY pcie_mgt 40L -pinDir pcie_refclk left -pinY pcie_refclk 20L -pinDir S_AXI_B left -pinY S_AXI_B 0L -pinDir led_pcie_link_up right -pinY led_pcie_link_up 80R -pinDir axi_aclk right -pinY axi_aclk 60R -pinBusDir axi_aresetn right -pinBusY axi_aresetn 40R
+preplace inst bright_cycle_emulator -pg 1 -lvl 4 -x 1090 -y 320 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 62 57 58 59 60 61 56 63 64 65 66 67 68 69 72 70 71} -defaultsOSRD -pinDir S_AXI_MC_CONFIG left -pinY S_AXI_MC_CONFIG 0L -pinDir S_AXI_SF_CTL left -pinY S_AXI_SF_CTL 20L -pinDir S_AXI_SHIM_CTL left -pinY S_AXI_SHIM_CTL 40L -pinDir AXIS_TX0 right -pinY AXIS_TX0 20R -pinDir AXIS_TX1 right -pinY AXIS_TX1 0R -pinDir clk left -pinY clk 60L -pinDir resetn left -pinY resetn 80L -pinDir eth0_tx_clk right -pinY eth0_tx_clk 80R -pinDir eth1_tx_clk right -pinY eth1_tx_clk 40R -pinDir resetn_out right -pinY resetn_out 60R
+preplace inst ethernet -pg 1 -lvl 5 -x 1470 -y 300 -swap {14 1 2 3 4 19 6 7 8 9 10 11 12 13 46 15 16 17 18 81 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 5 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 0 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 118 117 121 119 116 120 122} -defaultsOSRD -pinDir qsfp1_gt right -pinY qsfp1_gt 250R -pinDir qsfp1_clk right -pinY qsfp1_clk 270R -pinDir axis_tx1 left -pinY axis_tx1 20L -pinDir qsfp0_gt right -pinY qsfp0_gt 290R -pinDir qsfp0_clk right -pinY qsfp0_clk 310R -pinDir axis_tx0 left -pinY axis_tx0 40L -pinDir S_AXI_ETH_STATUS left -pinY S_AXI_ETH_STATUS 150L -pinDir M_AXI_RDMX0 right -pinY M_AXI_RDMX0 20R -pinDir M_AXI_RDMX1 right -pinY M_AXI_RDMX1 0R -pinDir eth1_tx_clk left -pinY eth1_tx_clk 190L -pinDir qsfp1_up right -pinY qsfp1_up 330R -pinDir eth0_tx_clk left -pinY eth0_tx_clk 230L -pinDir qsfp0_up right -pinY qsfp0_up 350R -pinDir sys_clk left -pinY sys_clk 170L -pinDir sys_resetn left -pinY sys_resetn 210L -pinDir init_clk right -pinY init_clk 370R
+preplace inst abm_manager -pg 1 -lvl 6 -x 1790 -y 220 -swap {35 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 70 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 0 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107} -defaultsOSRD -pinDir S_AXI_RAM1 left -pinY S_AXI_RAM1 80L -pinDir S_AXI_RAM0 left -pinY S_AXI_RAM0 100L -pinDir S_AXI_ABM left -pinY S_AXI_ABM 0L -pinDir clk left -pinY clk 120L -pinDir resetn left -pinY resetn 140L -pinDir abm_ready left -pinY abm_ready 160L
+preplace inst data_mover_ctl -pg 1 -lvl 4 -x 1090 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 22 20} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 60L -pinBusDir abm_host_addr left -pinBusY abm_host_addr 20L
+preplace inst axi_revision -pg 1 -lvl 4 -x 1090 -y 510 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir AXI_ACLK left -pinY AXI_ACLK 20L -pinDir AXI_ARESETN left -pinY AXI_ARESETN 40L
+preplace inst data_mover -pg 1 -lvl 1 -x 150 -y 220 -swap {35 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 0 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 73 72} -defaultsOSRD -pinDir DST_AXI right -pinY DST_AXI 90R -pinDir SRC_AXI right -pinY SRC_AXI 0R -pinDir clk right -pinY clk 110R -pinDir resetn right -pinY resetn 130R -pinBusDir dest_address right -pinBusY dest_address 170R -pinDir start right -pinY start 150R
+preplace inst qsfp_pins -pg 1 -lvl 6 -x 1790 -y 470 -defaultsOSRD -pinBusDir qsfp_rst_l right -pinBusY qsfp_rst_l 0R -pinBusDir qsfp_lp right -pinBusY qsfp_lp 20R
+preplace inst smartconnect -pg 1 -lvl 3 -x 740 -y 300 -swap {38 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 0 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 124 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 204 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 164 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 144 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 84 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225} -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 150L -pinDir S01_AXI left -pinY S01_AXI 0L -pinDir M00_AXI right -pinY M00_AXI 20R -pinDir M01_AXI left -pinY M01_AXI 170L -pinDir M02_AXI right -pinY M02_AXI 210R -pinDir M03_AXI right -pinY M03_AXI 60R -pinDir M04_AXI right -pinY M04_AXI 40R -pinDir M05_AXI right -pinY M05_AXI 150R -pinDir M06_AXI right -pinY M06_AXI 0R -pinDir aclk left -pinY aclk 190L -pinDir aresetn left -pinY aresetn 210L
+preplace netloc abm_manager_abm_ready 1 1 5 NJ 370 580J 240 NJ 240 NJ 240 1640
+preplace netloc abm_manager_ctl_0_abm_host_addr 1 1 3 NJ 390 580J 570 900
+preplace netloc bright_cycle_emulator_resetn_out 1 4 1 1260 380n
+preplace netloc eth_0_stream_clk 1 4 1 1240 400n
+preplace netloc eth_1_stream_clk 1 4 1 1280 360n
+preplace netloc init_clk_0_1 1 5 2 NJ 670 NJ
+preplace netloc pcie_axi_aclk 1 1 5 NJ 330 600 590 920 180 1300 180 1680J
+preplace netloc qsfp_pins_qsfp_lp 1 6 1 NJ 490
+preplace netloc qsfp_pins_qsfp_rst_l 1 6 1 NJ 470
+preplace netloc source_200Mhz_resetn 1 1 5 NJ 350 560 610 940 200 NJ 200 1660
+preplace netloc ethernet_qsfp0_up 1 5 2 NJ 650 NJ
+preplace netloc ethernet_qsfp1_up 1 5 2 NJ 630 NJ
+preplace netloc S_AXI_ABM_1 1 1 5 NJ 220 NJ 220 NJ 220 NJ 220 N
+preplace netloc bright_cycle_emulator_AXIS_TX0 1 4 1 N 340
+preplace netloc bright_cycle_emulator_AXIS_TX1 1 4 1 N 320
+preplace netloc cmac_usplus_0_gt_serial_port 1 5 2 NJ 590 NJ
+preplace netloc data_mover_DST_AXI 1 1 1 280 310n
+preplace netloc eth_1_qsfp_gt 1 5 2 NJ 550 NJ
+preplace netloc ethernet_M_AXI_RDMX0 1 5 1 N 320
+preplace netloc ethernet_M_AXI_RDMX1 1 5 1 N 300
+preplace netloc gt_ref_clk_0_1 1 5 2 NJ 610 NJ
+preplace netloc pcie_refclk_1 1 0 2 NJ 470 NJ
+preplace netloc qsfp_clk_0_1 1 5 2 NJ 570 NJ
+preplace netloc smartconnect_0_M01_AXI 1 2 1 N 470
+preplace netloc smartconnect_M00_AXI 1 3 1 N 320
+preplace netloc smartconnect_M02_AXI 1 3 1 N 510
+preplace netloc smartconnect_M03_AXI 1 3 1 N 360
+preplace netloc smartconnect_M04_AXI 1 3 1 N 340
+preplace netloc smartconnect_M05_AXI 1 3 2 NJ 450 N
+preplace netloc smartconnect_M06_AXI 1 3 1 880 60n
+preplace netloc xdma_0_M_AXI_B 1 2 1 N 450
+preplace netloc xdma_0_pcie_mgt 1 0 2 NJ 490 NJ
+levelinfo -pg 1 0 150 420 740 1090 1470 1790 1920
+pagesize -pg 1 -db -bbox -sgen -130 0 2080 720
+",
+   "No Loops_ScaleFactor":"0.614474",
+   "No Loops_TopLeft":"-125,-210",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port clk_200mhz -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus clk -pg 1 -lvl 3 -x 670 -y 60 -defaultsOSRD
+preplace portBus resetn -pg 1 -lvl 3 -x 670 -y 220 -defaultsOSRD
+preplace inst proc_sys_reset -pg 1 -lvl 2 -x 470 -y 180 -defaultsOSRD
+preplace inst clock_buffer_100MHz -pg 1 -lvl 1 -x 150 -y 60 -defaultsOSRD
+preplace inst one -pg 1 -lvl 1 -x 150 -y 160 -defaultsOSRD
+preplace netloc clock_buffer_100MHz_IBUF_OUT 1 1 2 280 60 NJ
+preplace netloc one_dout 1 1 1 NJ 160
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 1 NJ 220
+preplace netloc CLK_IN_D_0_1 1 0 1 NJ 60
+levelinfo -pg 1 0 150 470 670
+pagesize -pg 1 -db -bbox -sgen -140 0 800 280
+"
+}
+{
+   "da_axi4_cnt":"7"
+}
