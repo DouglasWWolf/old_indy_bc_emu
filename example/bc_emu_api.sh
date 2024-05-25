@@ -10,12 +10,17 @@
 #
 # 11-Apr-24  1.3.0  DWW  Added "set_nshot_mode"
 #
-# 28-Apr-25  1.5.0  DWW  Now assuming fpga_utils is in the search path 
+# 28-Apr-24  1.5.0  DWW  Now assuming fpga_utils is in the search path 
 #                        Added "confirm_rtl()" API
 #                        Removed "load_bitstream()" API
-#                        
+#
+# 22-May-24  1.10.0 DWW  Added "enable_sensor_header"
+#                        Added "set_sensor_header"
+#                        Added "get_sensor_header"
+#
+# 24-May-24  1.12.0 DWW  Added "get_frame_count"
 #==============================================================================
-BC_EMU_API_VERSION=1.5.0
+BC_EMU_API_VERSION=1.12.0
 
 #==============================================================================
 # AXI register definitions
@@ -45,7 +50,10 @@ MC_BASE=0x2000
        REG_FRAME_SIZE=$((MC_BASE + 10* 4))
       REG_PACKET_SIZE=$((MC_BASE + 11* 4))
 REG_PACKETS_PER_GROUP=$((MC_BASE + 12* 4))
-
+    REG_SENSOR_HEADER=$((MC_BASE + 13* 4))
+REG_ENABLE_SENSOR_HDR=$((MC_BASE + 14* 4))
+    REG_FRAME_COUNT_0=$((MC_BASE + 15 *4))
+    REG_FRAME_COUNT_1=$((MC_BASE + 16 *4))
 
 REG_BYTES_PER_USEC=$((0x3000 + 12*4))
       REG_METADATA=$((0x3000 + 16*4))
@@ -278,6 +286,38 @@ set_abm_addr()
 
 
 #==============================================================================
+#  enables or disables outputting of sensor-chip headers
+#     $1 = 0: Disable
+#     $1 = 1: Enable
+#==============================================================================
+enable_sensor_header()
+{
+    pcireg $REG_ENABLE_SENSOR_HDR $1
+}
+#==============================================================================
+
+
+#==============================================================================
+# Get the value of the sensor-header fields
+#==============================================================================
+set_sensor_header()
+{
+    pcireg $REG_SENSOR_HEADER $(strip_underscores $1)    
+}
+#==============================================================================
+
+
+#==============================================================================
+# Get the value of the sensor headers
+#==============================================================================
+get_sensor_header()
+{
+    read_reg $REG_SENSOR_HEADER
+}
+#==============================================================================
+
+
+#==============================================================================
 # This displays the number of the active FIFO, or "0" if neither is active
 #==============================================================================
 get_active_fifo()
@@ -469,9 +509,6 @@ load_fifo_imm()
 
 
 
-
-
-
 #==============================================================================
 # This will start generating data-frames from the specified FIFO
 #==============================================================================
@@ -490,6 +527,24 @@ start_fifo()
 
     # And tell the FPGA to start generating frames from this FIFO
     pcireg $REG_START $which_fifo
+}
+#==============================================================================
+
+
+#==============================================================================
+# Returns the specified frame counter
+#
+# $1 = 0 or 1
+#==============================================================================
+get_frame_count()
+{
+    if [ "$1" == "0" ]; then
+        read_reg $REG_FRAME_COUNT_0
+    elif [ "$1" == "1" ]; then
+        read_reg $REG_FRAME_COUNT_1
+    else
+        echo "Bad parameter [$1] on get_frame_count()" 1>&2
+    fi
 }
 #==============================================================================
 

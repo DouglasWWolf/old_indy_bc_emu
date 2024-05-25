@@ -42,14 +42,17 @@
 //                          Numerous small mindy-core changes to fix reset handling
 //
 // 20-May-2024  1.9.1  DWW  Updated "load_bitstream.sh" for compatibility with Indy hardware
-//                              ----------  NOT  YET  RELEASED  !!!!!  ---------------
+//
+// 24-May-2024  1.12.0 DWW  Added support for outputting sensor-chip header
+//                          Added support for outputting sensor-chip footer
+//                          Now providing register access to mindy-core frame counters
 //================================================================================================
 localparam VERSION_MAJOR = 1;
-localparam VERSION_MINOR = 9;
-localparam VERSION_BUILD = 1;
+localparam VERSION_MINOR = 12;
+localparam VERSION_BUILD = 0;
 localparam VERSION_RCAND = 0;
 
-localparam VERSION_DAY   = 20;
+localparam VERSION_DAY   = 24;
 localparam VERSION_MONTH = 5;
 localparam VERSION_YEAR  = 2024;
 

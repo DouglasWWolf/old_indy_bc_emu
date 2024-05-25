@@ -15,6 +15,8 @@ module mindy_core_ctl
 (
     input clk, resetn,
 
+    input     [31:0] FRAME_COUNT_0, FRAME_COUNT_1,
+
     output reg[63:0] RFD_ADDR, RFD_SIZE,
     output reg[63:0] RMD_ADDR, RMD_SIZE,
     output reg[63:0] RFC_ADDR,
@@ -22,6 +24,9 @@ module mindy_core_ctl
     output reg[31:0] FRAME_SIZE,
     output reg[15:0] PACKET_SIZE,
     output reg[31:0] PACKETS_PER_GROUP,
+
+    output reg[31:0] SENSOR_HDR,
+    output reg       SENSOR_HDR_ENABLE,
 
     //================== This is an AXI4-Lite slave interface ==================
         
@@ -71,6 +76,10 @@ localparam REG_RFC_ADDR_L        =  9;
 localparam REG_FRAME_SIZE        = 10;
 localparam REG_PACKET_SIZE       = 11;
 localparam REG_PACKETS_PER_GROUP = 12;
+localparam REG_SENSOR_HDR        = 13;
+localparam REG_SENSOR_HDR_ENABLE = 14;
+localparam REG_FRAME_COUNT_0     = 15;
+localparam REG_FRAME_COUNT_1     = 16;
 //==========================================================================
 
 
@@ -110,8 +119,6 @@ localparam DECERR = 3;
 // (128 bytes is 32 32-bit registers)
 localparam ADDR_MASK = 7'h7F;
 
-// This is a scratch-pad register that doesn't do anything
-reg[31:0] scratch;
 
 //==========================================================================
 // This state machine handles AXI4-Lite write requests
@@ -123,6 +130,8 @@ always @(posedge clk) begin
     // If we're in reset, initialize important registers
     if (resetn == 0) begin
         ashi_write_state  <= 0;
+        SENSOR_HDR        <= 32'h0FAAF0AA;
+        SENSOR_HDR_ENABLE <= 0;
 
     // If we're not in reset, and a write-request has occured...        
     end else case (ashi_write_state)
@@ -145,9 +154,11 @@ always @(posedge clk) begin
                     REG_RFC_ADDR_H : RFC_ADDR[63:32] <= ashi_wdata;
                     REG_RFC_ADDR_L : RFC_ADDR[31:00] <= ashi_wdata;
 
-                    REG_FRAME_SIZE       : FRAME_SIZE        <=ashi_wdata;
+                    REG_FRAME_SIZE       : FRAME_SIZE        <= ashi_wdata;
                     REG_PACKET_SIZE      : PACKET_SIZE       <= ashi_wdata;
                     REG_PACKETS_PER_GROUP: PACKETS_PER_GROUP <= ashi_wdata;
+                    REG_SENSOR_HDR       : SENSOR_HDR        <= ashi_wdata;
+                    REG_SENSOR_HDR_ENABLE: SENSOR_HDR_ENABLE <= ashi_wdata;
 
                     // Writes to any other register are a decode-error
                     default: ashi_wresp <= DECERR;
@@ -193,10 +204,14 @@ always @(posedge clk) begin
             REG_RMD_SIZE_L : ashi_rdata <= RMD_SIZE[31:00]; 
             REG_RFC_ADDR_H : ashi_rdata <= RFC_ADDR[63:32];
             REG_RFC_ADDR_L : ashi_rdata <= RFC_ADDR[31:00];
-
+            
             REG_FRAME_SIZE        : ashi_rdata <= FRAME_SIZE;       
             REG_PACKET_SIZE       : ashi_rdata <= PACKET_SIZE;
             REG_PACKETS_PER_GROUP : ashi_rdata <= PACKETS_PER_GROUP;
+            REG_SENSOR_HDR        : ashi_rdata <= SENSOR_HDR;
+            REG_SENSOR_HDR_ENABLE : ashi_rdata <= SENSOR_HDR_ENABLE;
+            REG_FRAME_COUNT_0     : ashi_rdata <= FRAME_COUNT_0;
+            REG_FRAME_COUNT_1     : ashi_rdata <= FRAME_COUNT_1;
 
             // Reads of any other register are a decode-error
             default: ashi_rresp <= DECERR;

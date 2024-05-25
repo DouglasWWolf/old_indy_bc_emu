@@ -76,6 +76,9 @@ set_rate_limit 16000
 # Our packets are 4K each
 set_packet_size 0x1000
 
+# Include sensor-chip headers in the output
+enable_sensor_header 1
+
 # A frame is 4M bytes
 set_frame_size 0x40_0000
 

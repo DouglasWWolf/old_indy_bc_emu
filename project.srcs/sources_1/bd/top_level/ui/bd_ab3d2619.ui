@@ -2,58 +2,69 @@
    "ActiveEmotionalView":"No Loops",
    "Default View_ScaleFactor":"1.0",
    "Default View_TopLeft":"-528,-83",
+   "Display-IntfAXI4Lite":"true",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
    "DisplayTieOff":"1",
    "ExpandedHierarchyInLayout":"",
    "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layers":"/bright_cycle_emulator/clk_1:true|/bright_cycle_emulator/eth0_tx_clk_1:true|/bright_cycle_emulator/eth1_tx_clk_1:true|/bright_cycle_emulator/resetn_1:true|",
    "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port S_AXI_MC_CONFIG -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
-preplace port S_AXI_SF_CTL -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
-preplace port S_AXI_SHIM_CTL -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
-preplace port AXIS_TX0 -pg 1 -lvl 5 -x 1580 -y 150 -defaultsOSRD
-preplace port AXIS_TX1 -pg 1 -lvl 5 -x 1580 -y 170 -defaultsOSRD
-preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD
-preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
-preplace port port-id_eth0_tx_clk -pg 1 -lvl 5 -x 1580 -y 210 -defaultsOSRD -right
-preplace port port-id_eth1_tx_clk -pg 1 -lvl 5 -x 1580 -y 190 -defaultsOSRD -right
-preplace port port-id_resetn_out -pg 1 -lvl 5 -x 1580 -y 700 -defaultsOSRD
-preplace inst mindy_core -pg 1 -lvl 4 -x 1390 -y 150 -swap {4 1 2 3 0 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 29 27 28 20 22 23 24 25 26 31 30} -defaultsOSRD -pinDir AXIS_FD_IN left -pinY AXIS_FD_IN 100L -pinDir AXIS_MD_IN left -pinY AXIS_MD_IN 0L -pinDir AXIS_TX0 right -pinY AXIS_TX0 0R -pinDir AXIS_TX1 right -pinY AXIS_TX1 20R -pinDir clk left -pinY clk 140L -pinDir resetn left -pinY resetn 500L -pinBusDir PACKET_SIZE left -pinBusY PACKET_SIZE 460L -pinBusDir PACKETS_PER_GROUP left -pinBusY PACKETS_PER_GROUP 480L -pinBusDir FRAME_SIZE left -pinBusY FRAME_SIZE 120L -pinBusDir FD_RING_ADDR left -pinBusY FD_RING_ADDR 360L -pinBusDir FD_RING_SIZE left -pinBusY FD_RING_SIZE 380L -pinBusDir MD_RING_ADDR left -pinBusY MD_RING_ADDR 400L -pinBusDir MD_RING_SIZE left -pinBusY MD_RING_SIZE 420L -pinBusDir FC_ADDR left -pinBusY FC_ADDR 440L -pinDir eth0_tx_clk right -pinY eth0_tx_clk 60R -pinDir eth1_tx_clk right -pinY eth1_tx_clk 40R
-preplace inst metadata_gen -pg 1 -lvl 3 -x 1020 -y 90 -swap {0 1 2 3 5 7 4 6} -defaultsOSRD -pinDir AXIS_MD right -pinY AXIS_MD 60R -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 60L -pinDir generate_md left -pinY generate_md 0L -pinBusDir MD_FIXED left -pinBusY MD_FIXED 40L
-preplace inst mindy_core_config -pg 1 -lvl 1 -x 220 -y 490 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 24 25 26 27 22 28 29} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir RFD_ADDR right -pinBusY RFD_ADDR 20R -pinBusDir RFD_SIZE right -pinBusY RFD_SIZE 40R -pinBusDir RMD_ADDR right -pinBusY RMD_ADDR 60R -pinBusDir RMD_SIZE right -pinBusY RMD_SIZE 80R -pinBusDir RFC_ADDR right -pinBusY RFC_ADDR 100R -pinBusDir FRAME_SIZE right -pinBusY FRAME_SIZE 0R -pinBusDir PACKET_SIZE right -pinBusY PACKET_SIZE 120R -pinBusDir PACKETS_PER_GROUP right -pinBusY PACKETS_PER_GROUP 140R
-preplace inst rate_limiter -pg 1 -lvl 3 -x 1020 -y 250 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 14 13} -defaultsOSRD -pinDir AXIS_IN left -pinY AXIS_IN 0L -pinDir AXIS_OUT right -pinY AXIS_OUT 0R -pinDir clk left -pinY clk 80L -pinDir resetn left -pinY resetn 180L -pinBusDir BYTES_PER_USEC left -pinBusY BYTES_PER_USEC 160L
-preplace inst simframe_config -pg 1 -lvl 2 -x 610 -y 390 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir METADATA right -pinBusY METADATA 0R -pinBusDir BYTES_PER_USEC right -pinBusY BYTES_PER_USEC 20R
-preplace inst simframe_gen -pg 1 -lvl 2 -x 610 -y 210 -swap {0 1 2 3 4 5 6 7 8 10 9 11 12} -defaultsOSRD -pinDir AXIS_IN left -pinY AXIS_IN 0L -pinDir AXIS_OUT right -pinY AXIS_OUT 40R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L -pinBusDir FRAME_SIZE left -pinBusY FRAME_SIZE 60L -pinDir start_of_frame right -pinY start_of_frame 60R
-preplace inst simframe_ctl -pg 1 -lvl 1 -x 220 -y 210 -defaultsOSRD -pinDir AXIS_OUT right -pinY AXIS_OUT 0R -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 80L -pinDir resetn left -pinY resetn 100L -pinDir resetn_out right -pinY resetn_out 20R
-preplace netloc FC_ADDR_1 1 1 3 NJ 590 NJ 590 N
-preplace netloc FD_RING_ADDR_1 1 1 3 NJ 510 NJ 510 N
-preplace netloc FD_RING_SIZE_1 1 1 3 NJ 530 NJ 530 N
-preplace netloc MD_RING_ADDR_1 1 1 3 NJ 550 NJ 550 N
-preplace netloc MD_RING_SIZE_1 1 1 3 NJ 570 NJ 570 N
-preplace netloc PACKETS_PER_GROUP_1 1 1 3 NJ 630 NJ 630 N
-preplace netloc PACKET_SIZE_1 1 1 3 NJ 610 NJ 610 N
-preplace netloc clk_1 1 0 4 40 370 440 330 800 30 1200J
-preplace netloc eth0_tx_clk_1 1 4 1 N 210
-preplace netloc eth1_tx_clk_1 1 4 1 N 190
-preplace netloc mindy_core_config_FRAME_SIZE 1 1 3 420 10 NJ 10 1220
-preplace netloc mindy_core_reset_external_resetn 1 1 4 400 650 840 650 1220J 700 N
-preplace netloc resetn_1 1 0 2 20 430 NJ
-preplace netloc simframe_config_BYTES_PER_USEC 1 2 1 N 410
-preplace netloc simframe_config_METADATA 1 2 1 820 130n
-preplace netloc simframe_gen_start_of_frame 1 2 1 780 90n
-preplace netloc S_AXI_MC_CONFIG_1 1 0 1 NJ 490
-preplace netloc S_AXI_SF_CTL_1 1 0 1 NJ 210
-preplace netloc S_AXI_SHIM_CTL_1 1 0 2 NJ 390 NJ
-preplace netloc metadata_gen_AXIS_MD 1 3 1 N 150
-preplace netloc mindy_core_AXIS_TX0 1 4 1 N 150
-preplace netloc mindy_core_AXIS_TX1 1 4 1 N 170
-preplace netloc rate_limiter_AXIS_OUT 1 3 1 N 250
-preplace netloc simframe_ctl_AXIS_OUT 1 1 1 N 210
-preplace netloc simframe_gen_AXIS_OUT 1 2 1 N 250
-levelinfo -pg 1 0 220 610 1020 1390 1580
-pagesize -pg 1 -db -bbox -sgen -190 0 1710 720
+preplace port S_AXI_MC_CONFIG -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port S_AXI_SF_CTL -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port S_AXI_SHIM_CTL -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port AXIS_TX0 -pg 1 -lvl 6 -x 2060 -y 480 -defaultsOSRD
+preplace port AXIS_TX1 -pg 1 -lvl 6 -x 2060 -y 500 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace port port-id_eth0_tx_clk -pg 1 -lvl 6 -x 2060 -y 540 -defaultsOSRD -right
+preplace port port-id_eth1_tx_clk -pg 1 -lvl 6 -x 2060 -y 520 -defaultsOSRD -right
+preplace port port-id_resetn_out -pg 1 -lvl 6 -x 2060 -y 420 -defaultsOSRD
+preplace inst mindy_core -pg 1 -lvl 5 -x 1870 -y 480 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 22 33 28 29 32 23 24 25 26 27 31 30 20 21} -defaultsOSRD -pinDir AXIS_FD_IN left -pinY AXIS_FD_IN 0L -pinDir AXIS_MD_IN left -pinY AXIS_MD_IN 160L -pinDir AXIS_TX0 right -pinY AXIS_TX0 0R -pinDir AXIS_TX1 right -pinY AXIS_TX1 20R -pinDir clk left -pinY clk 220L -pinDir resetn left -pinY resetn 460L -pinBusDir PACKET_SIZE left -pinBusY PACKET_SIZE 400L -pinBusDir PACKETS_PER_GROUP left -pinBusY PACKETS_PER_GROUP 420L -pinBusDir FRAME_SIZE left -pinBusY FRAME_SIZE 440L -pinBusDir FD_RING_ADDR left -pinBusY FD_RING_ADDR 280L -pinBusDir FD_RING_SIZE left -pinBusY FD_RING_SIZE 300L -pinBusDir MD_RING_ADDR left -pinBusY MD_RING_ADDR 320L -pinBusDir MD_RING_SIZE left -pinBusY MD_RING_SIZE 340L -pinBusDir FC_ADDR left -pinBusY FC_ADDR 360L -pinDir eth0_tx_clk right -pinY eth0_tx_clk 60R -pinDir eth1_tx_clk right -pinY eth1_tx_clk 40R -pinBusDir FRAME_COUNT_1 left -pinBusY FRAME_COUNT_1 180L -pinBusDir FRAME_COUNT_0 left -pinBusY FRAME_COUNT_0 200L
+preplace inst metadata_gen -pg 1 -lvl 4 -x 1460 -y 640 -swap {0 1 2 3 6 5 7 4} -defaultsOSRD -pinDir AXIS_MD right -pinY AXIS_MD 0R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L -pinDir generate_md left -pinY generate_md 60L -pinBusDir MD_FIXED left -pinBusY MD_FIXED 0L
+preplace inst rate_limiter -pg 1 -lvl 4 -x 1460 -y 340 -swap {0 1 2 3 4 5 6 7 8 9 10 11 14 13 12} -defaultsOSRD -pinDir AXIS_IN left -pinY AXIS_IN 0L -pinDir AXIS_OUT right -pinY AXIS_OUT 140R -pinDir clk left -pinY clk 60L -pinDir resetn left -pinY resetn 40L -pinBusDir BYTES_PER_USEC left -pinBusY BYTES_PER_USEC 20L
+preplace inst simframe_config -pg 1 -lvl 3 -x 1040 -y 160 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 19 18 21 20} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L -pinBusDir METADATA right -pinBusY METADATA 40R -pinBusDir BYTES_PER_USEC right -pinBusY BYTES_PER_USEC 20R
+preplace inst simframe_gen -pg 1 -lvl 2 -x 610 -y 240 -swap {0 1 2 3 4 5 6 7 8 10 9 11 12} -defaultsOSRD -pinDir AXIS_IN left -pinY AXIS_IN 0L -pinDir AXIS_OUT right -pinY AXIS_OUT 100R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L -pinBusDir FRAME_SIZE left -pinBusY FRAME_SIZE 120L -pinDir start_of_frame right -pinY start_of_frame 120R
+preplace inst mindy_core_config -pg 1 -lvl 1 -x 220 -y 260 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 22 24 25 26 27 28 29 30 31 32 33} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir FRAME_COUNT_0 right -pinBusY FRAME_COUNT_0 300R -pinBusDir FRAME_COUNT_1 right -pinBusY FRAME_COUNT_1 280R -pinBusDir RFD_ADDR right -pinBusY RFD_ADDR 500R -pinBusDir RFD_SIZE right -pinBusY RFD_SIZE 520R -pinBusDir RMD_ADDR right -pinBusY RMD_ADDR 540R -pinBusDir RMD_SIZE right -pinBusY RMD_SIZE 560R -pinBusDir RFC_ADDR right -pinBusY RFC_ADDR 580R -pinBusDir FRAME_SIZE right -pinBusY FRAME_SIZE 600R -pinBusDir PACKET_SIZE right -pinBusY PACKET_SIZE 620R -pinBusDir PACKETS_PER_GROUP right -pinBusY PACKETS_PER_GROUP 640R -pinBusDir SENSOR_HDR right -pinBusY SENSOR_HDR 660R -pinDir SENSOR_HDR_ENABLE right -pinY SENSOR_HDR_ENABLE 680R
+preplace inst stamp_sensor_hdr -pg 1 -lvl 3 -x 1040 -y 340 -swap {0 1 2 3 4 5 6 7 10 9 13 12 11 8} -defaultsOSRD -pinDir AXIS_IN left -pinY AXIS_IN 0L -pinDir AXIS_OUT right -pinY AXIS_OUT 0R -pinDir clk left -pinY clk 60L -pinDir resetn left -pinY resetn 40L -pinDir enable left -pinY enable 120L -pinBusDir frame_header left -pinBusY frame_header 100L -pinBusDir frame_size left -pinBusY frame_size 80L -pinDir start_of_frame left -pinY start_of_frame 20L
+preplace inst simframe_ctl -pg 1 -lvl 1 -x 220 -y 60 -defaultsOSRD -pinDir AXIS_OUT right -pinY AXIS_OUT 20R -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinDir resetn_out right -pinY resetn_out 40R
+preplace netloc FC_ADDR_1 1 1 4 NJ 840 NJ 840 NJ 840 N
+preplace netloc FD_RING_ADDR_1 1 1 4 NJ 760 NJ 760 NJ 760 N
+preplace netloc FD_RING_SIZE_1 1 1 4 NJ 780 NJ 780 NJ 780 N
+preplace netloc MD_RING_ADDR_1 1 1 4 NJ 800 NJ 800 NJ 800 N
+preplace netloc MD_RING_SIZE_1 1 1 4 NJ 820 NJ 820 NJ 820 N
+preplace netloc PACKETS_PER_GROUP_1 1 1 4 NJ 900 NJ 900 NJ 900 N
+preplace netloc PACKET_SIZE_1 1 1 4 NJ 880 NJ 880 NJ 880 N
+preplace netloc clk_1 1 0 5 20 200 400 440 780 280 1240 580 1640
+preplace netloc eth0_tx_clk_1 1 5 1 NJ 540
+preplace netloc eth1_tx_clk_1 1 5 1 NJ 520
+preplace netloc mindy_core_config_FRAME_SIZE 1 1 4 440 860 860 920 NJ 920 NJ
+preplace netloc mindy_core_reset_external_resetn 1 1 5 420 420 800 260 1220 940 1680 420 N
+preplace netloc resetn_1 1 0 3 40 180 NJ 180 N
+preplace netloc simframe_config_BYTES_PER_USEC 1 3 1 1280 180n
+preplace netloc simframe_config_METADATA 1 3 1 1260 200n
+preplace netloc simframe_gen_start_of_frame 1 2 2 820 520 1200J
+preplace netloc mindy_core_config_SENSOR_HDR_ENABLE 1 1 2 NJ 940 880
+preplace netloc mindy_core_config_SENSOR_HDR 1 1 2 NJ 920 840
+preplace netloc mindy_core_FRAME_COUNT_0 1 1 4 NJ 560 NJ 560 NJ 560 1660J
+preplace netloc mindy_core_FRAME_COUNT_1 1 1 4 NJ 540 NJ 540 NJ 540 1700J
+preplace netloc S_AXI_MC_CONFIG_1 1 0 1 N 260
+preplace netloc S_AXI_SF_CTL_1 1 0 1 NJ 60
+preplace netloc S_AXI_SHIM_CTL_1 1 0 3 NJ 160 NJ 160 N
+preplace netloc metadata_gen_AXIS_MD 1 4 1 N 640
+preplace netloc mindy_core_AXIS_TX0 1 5 1 NJ 480
+preplace netloc mindy_core_AXIS_TX1 1 5 1 NJ 500
+preplace netloc rate_limiter_AXIS_OUT 1 4 1 N 480
+preplace netloc simframe_ctl_AXIS_OUT 1 1 1 440 80n
+preplace netloc stamp_sensor_hdr_0_AXIS_OUT 1 3 1 N 340
+preplace netloc simframe_gen_AXIS_OUT 1 2 1 N 340
+levelinfo -pg 1 0 220 610 1040 1460 1870 2060
+pagesize -pg 1 -db -bbox -sgen -190 0 2190 1000
 ",
-   "No Loops_ScaleFactor":"0.713908",
-   "No Loops_TopLeft":"-182,-111",
+   "No Loops_ScaleFactor":"0.56938",
+   "No Loops_TopLeft":"-181,-116",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
 preplace inst mindy_core_ctl_0 -pg 1 -lvl 1 -x 170 -y 120 -defaultsOSRD

@@ -79,8 +79,11 @@ set_packet_size 4096
 # A frame is 4M bytes
 set_frame_size 0x40_0000
 
+# Don't include sensor-chip header
+enable_sensor_header 0
+
 # Set the number of packets in a packet-burst on each QSFP
-set_ping_pong_group 1
+set_ping_pong_group 4
 
 # Define the location and size of the frame-data ring buffer
 define_fd_ring 0x1234_5678_9abc_def0 0x0000_0000_0400_0000
